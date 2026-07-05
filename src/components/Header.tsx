@@ -5,6 +5,7 @@ import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useScrollHeader } from "../hooks/useScrollHeader";
 import { firmInfo, navLinks } from "../data/content";
+import { BrandLogo } from "./BrandLogo";
 
 export function Header() {
   const isScrolled = useScrollHeader();
@@ -113,13 +114,11 @@ export function Header() {
       >
         <div className="site-header__bar container-grid">
           <Link to="/" className="site-header__brand group" onClick={closeMenu}>
-            <span className="site-header__mark font-serif" aria-hidden="true">
-              {firmInfo.shortName}
-            </span>
-            <span className="site-header__brand-text">
-              <span className="site-header__name">{firmInfo.name}</span>
-              <span className="site-header__est">Est. {firmInfo.founded}</span>
-            </span>
+            <BrandLogo
+              variant={solid ? "header-dark" : "header-light"}
+              showEst
+              founded={firmInfo.founded}
+            />
           </Link>
 
           <nav className="site-header__desktop-nav" aria-label="Main navigation">

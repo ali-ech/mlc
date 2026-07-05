@@ -11,6 +11,7 @@ import {
   Phone,
 } from "lucide-react";
 import { firmInfo, navLinks, practiceAreas } from "../data/content";
+import { BrandLogo } from "./BrandLogo";
 
 const whatsappHref = `https://wa.me/${firmInfo.whatsapp.replace(/\D/g, "")}`;
 
@@ -24,13 +25,7 @@ export function Footer() {
           <div className="site-footer__grid">
             <div className="site-footer__brand">
               <Link to="/" className="site-footer__logo group">
-                <span className="site-header__mark site-header__mark--footer font-serif" aria-hidden="true">
-                  {firmInfo.shortName}
-                </span>
-                <span className="flex flex-col">
-                  <span className="site-footer__logo-name">{firmInfo.name}</span>
-                  <span className="site-footer__logo-est">Est. {firmInfo.founded}</span>
-                </span>
+                <BrandLogo variant="footer" showEst founded={firmInfo.founded} />
               </Link>
               <p className="site-footer__tagline">
                 Focused legal counsel for Pakistan&apos;s pharmaceutical, nutraceutical, herbal, and
