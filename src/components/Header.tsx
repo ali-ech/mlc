@@ -117,12 +117,8 @@ export function Header() {
               {firmInfo.shortName}
             </span>
             <span className="site-header__brand-text">
-              <span className="site-header__name font-sans text-[0.6rem] font-semibold uppercase tracking-[0.22em]">
-                {firmInfo.name}
-              </span>
-              <span className="site-header__est mt-0.5 font-sans text-[0.5625rem] font-normal tracking-[0.14em] uppercase">
-                Est. {firmInfo.founded}
-              </span>
+              <span className="site-header__name">{firmInfo.name}</span>
+              <span className="site-header__est">Est. {firmInfo.founded}</span>
             </span>
           </Link>
 
