@@ -1348,105 +1348,26 @@ textarea.form-input {
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
   min-width: 0;
 }
 
-.brand-logo__mark {
-  width: clamp(1.75rem, 5vw, 2.25rem);
-  height: auto;
-  flex-shrink: 0;
-  opacity: 0.85;
+.brand-logo__img {
+  display: block;
+  width: auto;
+  height: clamp(2.25rem, 7.5vw, 3rem);
+  max-width: min(11.5rem, 58vw);
+  object-fit: contain;
+  object-position: left center;
 }
 
-.brand-logo__wordmark {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  line-height: 1;
+.brand-logo--footer .brand-logo__img {
+  height: clamp(2.5rem, 8vw, 3.25rem);
+  max-width: min(13rem, 70vw);
 }
 
-.brand-logo__script {
-  font-family: var(--font-script);
-  font-size: clamp(1.375rem, 4.5vw, 2rem);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-}
-
-.brand-logo__caps {
-  margin-top: 0.125rem;
-  font-family: var(--font-sans);
-  font-size: clamp(0.4375rem, 2.4vw, 0.5625rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.brand-logo__est {
-  margin-top: 0.2rem;
-  font-family: var(--font-sans);
-  font-size: clamp(0.3125rem, 1.8vw, 0.4375rem);
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-.brand-logo--header-dark .brand-logo__mark {
-  color: var(--color-grey);
-}
-
-.brand-logo--header-dark .brand-logo__script {
-  color: #5f6b78;
-}
-
-.brand-logo--header-dark .brand-logo__caps {
-  color: var(--color-ink);
-}
-
-.brand-logo--header-dark .brand-logo__est {
-  color: var(--color-gold);
-}
-
-.brand-logo--header-light .brand-logo__mark {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.brand-logo--header-light .brand-logo__script {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.brand-logo--header-light .brand-logo__caps {
-  color: #fff;
-}
-
-.brand-logo--header-light .brand-logo__est {
-  color: var(--color-gold-light);
-}
-
-.brand-logo--footer .brand-logo__mark {
-  color: var(--color-gold-light);
-  opacity: 0.9;
-}
-
-.brand-logo--footer .brand-logo__script {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.brand-logo--footer .brand-logo__caps {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.brand-logo--footer .brand-logo__est {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.group:hover .brand-logo--header-dark .brand-logo__script,
-.group:hover .brand-logo--header-light .brand-logo__script {
-  color: var(--color-gold-light);
+.group:hover .brand-logo__img {
+  opacity: 0.88;
+  transition: opacity 0.3s ease;
 }
 
 .site-header--transparent .nav-link {

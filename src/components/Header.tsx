@@ -114,11 +114,7 @@ export function Header() {
       >
         <div className="site-header__bar container-grid">
           <Link to="/" className="site-header__brand group" onClick={closeMenu}>
-            <BrandLogo
-              variant={solid ? "header-dark" : "header-light"}
-              showEst
-              founded={firmInfo.founded}
-            />
+            <BrandLogo variant={solid ? "header-dark" : "header-light"} />
           </Link>
 
           <nav className="site-header__desktop-nav" aria-label="Main navigation">
