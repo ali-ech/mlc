@@ -1,18 +1,53 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { InquiryForm } from "./InquiryForm";
 import { firmInfo } from "../data/content";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Globe, Link as LinkIcon, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+
+const whatsappHref = `https://wa.me/${firmInfo.whatsapp.replace(/\D/g, "")}`;
 
 const contactItems: {
   icon: typeof MapPin;
   label: string;
   value: string;
   href?: string;
+  external?: boolean;
 }[] = [
-  { icon: MapPin, label: "Office", value: `${firmInfo.address.line1}, ${firmInfo.address.line2}, ${firmInfo.address.country}` },
-  { icon: Phone, label: "Telephone", value: firmInfo.phone, href: `tel:${firmInfo.phone.replace(/\s/g, "")}` },
-  { icon: Mail, label: "Email", value: firmInfo.email, href: `mailto:${firmInfo.email}` },
-  { icon: Clock, label: "Hours", value: firmInfo.hours },
+  {
+    icon: MapPin,
+    label: "Office",
+    value: `${firmInfo.address.line1}, ${firmInfo.address.line2}, ${firmInfo.address.city}, ${firmInfo.address.country}`,
+  },
+  {
+    icon: Phone,
+    label: "Telephone",
+    value: firmInfo.phone,
+    href: `tel:${firmInfo.phone.replace(/\s/g, "")}`,
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: firmInfo.whatsapp,
+    href: whatsappHref,
+    external: true,
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: `${firmInfo.email} · ${firmInfo.founderEmail}`,
+    href: `mailto:${firmInfo.email}`,
+  },
+  {
+    icon: Globe,
+    label: "Website",
+    value: firmInfo.websiteDisplay,
+    href: firmInfo.website,
+    external: true,
+  },
+  {
+    icon: Clock,
+    label: "Hours",
+    value: firmInfo.hours,
+  },
 ];
 
 export function Contact({ standalone = false }: { standalone?: boolean }) {
@@ -26,7 +61,7 @@ export function Contact({ standalone = false }: { standalone?: boolean }) {
               Begin the Conversation
             </h2>
             <p className="lead mt-4 max-w-xl">
-              Confidential inquiries welcomed. Our team responds within one business day.
+              Confidential inquiries welcomed. Reach us by phone, WhatsApp, or email — our team responds promptly.
             </p>
           </ScrollReveal>
         )}
@@ -35,6 +70,9 @@ export function Contact({ standalone = false }: { standalone?: boolean }) {
           <ScrollReveal className="contact-v3__info" delay={0.1}>
             <div className="contact-v3__info-inner">
               <h3 className="font-serif text-xl font-medium text-white">Firm Details</h3>
+              <p className="mt-2 text-[0.875rem] text-white/50">
+                {firmInfo.founder}, {firmInfo.founderTitle}
+              </p>
               <ul className="contact-v3__list mt-8">
                 {contactItems.map((item) => {
                   const Icon = item.icon;
@@ -44,7 +82,12 @@ export function Contact({ standalone = false }: { standalone?: boolean }) {
                       <div>
                         <p className="contact-v3__list-label">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} className="contact-v3__list-value contact-v3__list-value--link">
+                          <a
+                            href={item.href}
+                            className="contact-v3__list-value contact-v3__list-value--link"
+                            target={item.external ? "_blank" : undefined}
+                            rel={item.external ? "noopener noreferrer" : undefined}
+                          >
                             {item.value}
                           </a>
                         ) : (
@@ -55,18 +98,23 @@ export function Contact({ standalone = false }: { standalone?: boolean }) {
                   );
                 })}
               </ul>
-              <p className="contact-v3__direct mt-8 text-[0.8125rem] text-white/40">
-                Direct line to {firmInfo.founder}:{" "}
-                <a href={`mailto:${firmInfo.founderEmail}`} className="text-[var(--color-gold-light)] underline underline-offset-2">
-                  {firmInfo.founderEmail}
+              <div className="contact-v3__social mt-8">
+                <a
+                  href={firmInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[0.8125rem] text-[var(--color-gold-light)] transition-opacity hover:opacity-80"
+                >
+                  <LinkIcon className="h-4 w-4 stroke-[1.25]" aria-hidden="true" />
+                  LinkedIn · {firmInfo.linkedinName}
                 </a>
-              </p>
+              </div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal className="contact-v3__form" delay={0.15}>
             <div className="contact-v3__form-card">
-              <InquiryForm idPrefix="contact" title="Send a Message" />
+              <InquiryForm idPrefix="contact" title="Contact Us" />
             </div>
           </ScrollReveal>
         </div>

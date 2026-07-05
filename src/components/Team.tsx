@@ -43,6 +43,11 @@ export function Team({ standalone = false }: { standalone?: boolean }) {
                     src={member.image}
                     alt={`${member.name}, ${member.title}`}
                     className="team-card__image img-premium"
+                    style={
+                      "imagePosition" in member && member.imagePosition
+                        ? { objectPosition: member.imagePosition }
+                        : undefined
+                    }
                   />
                 </div>
 

@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Clock, Link as LinkIcon, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Clock,
+  Globe,
+  Link as LinkIcon,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
 import { firmInfo, navLinks, practiceAreas } from "../data/content";
+
+const whatsappHref = `https://wa.me/${firmInfo.whatsapp.replace(/\D/g, "")}`;
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -37,10 +49,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link to={link.to} className="site-footer__link group">
                       {link.label}
-                      <ArrowUpRight
-                        className="site-footer__link-icon"
-                        aria-hidden="true"
-                      />
+                      <ArrowUpRight className="site-footer__link-icon" aria-hidden="true" />
                     </Link>
                   </li>
                 ))}
@@ -71,7 +80,7 @@ export function Footer() {
                     <br />
                     {firmInfo.address.line2}
                     <br />
-                    {firmInfo.address.country}
+                    {firmInfo.address.city}, {firmInfo.address.country}
                   </span>
                 </li>
                 <li>
@@ -79,8 +88,24 @@ export function Footer() {
                   <a href={`tel:${firmInfo.phone.replace(/\s/g, "")}`}>{firmInfo.phone}</a>
                 </li>
                 <li>
+                  <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                    WhatsApp {firmInfo.whatsapp}
+                  </a>
+                </li>
+                <li>
                   <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  <a href={`mailto:${firmInfo.email}`}>{firmInfo.email}</a>
+                  <span>
+                    <a href={`mailto:${firmInfo.email}`}>{firmInfo.email}</a>
+                    <br />
+                    <a href={`mailto:${firmInfo.founderEmail}`}>{firmInfo.founderEmail}</a>
+                  </span>
+                </li>
+                <li>
+                  <Globe className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <a href={firmInfo.website} target="_blank" rel="noopener noreferrer">
+                    {firmInfo.websiteDisplay}
+                  </a>
                 </li>
                 <li>
                   <Clock className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -92,10 +117,10 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="site-footer__social"
-                aria-label="Muntaha Law Consultants on LinkedIn"
+                aria-label={`${firmInfo.linkedinName} on LinkedIn`}
               >
                 <LinkIcon className="h-4 w-4 stroke-[1.25]" aria-hidden="true" />
-                LinkedIn
+                {firmInfo.linkedinName}
               </a>
             </div>
           </div>
@@ -105,7 +130,9 @@ export function Footer() {
       <div className="site-footer__bar">
         <div className="container-grid site-footer__bar-inner">
           <p>&copy; {currentYear} {firmInfo.name}. All rights reserved.</p>
-          <p>{firmInfo.founder}, Advocate · Karachi, Pakistan</p>
+          <p>
+            {firmInfo.founder}, {firmInfo.founderTitle} · {firmInfo.address.city}, Pakistan
+          </p>
           <p className="site-footer__disclaimer">
             The information on this site is for general guidance only and does not constitute legal advice.
           </p>

@@ -1,19 +1,23 @@
 export const firmInfo = {
   name: "Muntaha Law Consultants",
   shortName: "MLC",
-  founder: "Shaheen Shah",
-  founderTitle: "Founder and Principal Counsel",
+  founder: "Shahin Shah",
+  founderTitle: "Advocate High Court",
   founded: 2003,
-  email: "info@muntahalaw.com",
-  founderEmail: "shaheen.shah@muntahalaw.com",
-  phone: "+92 21 3567 8900",
-  phoneAlt: "+92 300 1234567",
+  email: "shahin@muntahalc.com",
+  founderEmail: "postshaheen@gmail.com",
+  phone: "+92 91 26 18 008",
+  whatsapp: "+92 331 33 33 131",
+  website: "https://www.muntahalc.com",
+  websiteDisplay: "www.muntahalc.com",
   address: {
-    line1: "Suite 402, Al-Hamra Business Centre",
-    line2: "Shahrah-e-Faisal, Karachi 75400",
+    line1: "Office # 4, 2nd Floor, Bilal Tower",
+    line2: "Opp. Sarki Gate, Circular Road",
+    city: "Peshawar City",
     country: "Pakistan",
   },
-  linkedin: "https://linkedin.com/company/muntaha-law-consultants",
+  linkedinName: "Shahin Shah",
+  linkedin: "https://www.linkedin.com",
   hours: "Monday – Friday, 9:00 AM – 6:00 PM PKT",
 } as const;
 
@@ -28,13 +32,13 @@ export const navLinks = [
 export const teamMembers = [
   {
     id: "shaheen-shah",
-    name: "Shaheen Shah",
-    title: "Founder and Principal Counsel",
-    subtitle: "Advocate · Former Drug Court Prosecutor",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format&fit=crop",
+    name: "Shahin Shah",
+    title: "Advocate High Court",
+    subtitle: "Founder · Former Drug Court Prosecutor",
+    image: "/team/shaheen-shah.jpeg",
+    imagePosition: "center 15%",
     bio: "With over two decades of experience, Mr. Shah established Muntaha Law Consultants in 2003 and has built one of Pakistan's most focused practices in pharmaceutical and regulatory law. His career began as a Prosecutor in the Drug Court, giving him rare insight into enforcement standards and prosecution strategy — knowledge that continues to inform every matter the firm handles.",
-    fullBio: "Shaheen Shah is the Founder and Principal Counsel of Muntaha Law Consultants. After serving as a Prosecutor in the Drug Court, he transitioned to private practice with a singular focus on pharmaceutical and regulatory law. Over twenty years, he has represented manufacturers, importers, and distributors before DRAP, Drug Courts, Provincial Quality Control Boards, and the High Courts. His dual perspective — prosecution and defense — is the firm's defining strategic advantage.",
+    fullBio: "Shahin Shah is an Advocate of the High Court and Founder of Muntaha Law Consultants. After serving as a Prosecutor in the Drug Court, he transitioned to private practice with a singular focus on pharmaceutical and regulatory law. Over twenty years, he has represented manufacturers, importers, and distributors before DRAP, Drug Courts, Provincial Quality Control Boards, and the High Courts. His dual perspective — prosecution and defense — is the firm's defining strategic advantage.",
     expertise: ["Drug Court Litigation", "DRAP Registration and Appeals", "GMP Compliance", "Pricing Disputes", "Enforcement Defense"],
   },
   {
@@ -202,8 +206,7 @@ export const images = {
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop",
   about:
     "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80&auto=format&fit=crop",
-  founderPortrait:
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format&fit=crop",
+  founderPortrait: "/team/shaheen-shah.jpeg",
   cta:
     "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80&auto=format&fit=crop",
 } as const;

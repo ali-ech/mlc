@@ -45,6 +45,7 @@ export function About({ standalone = false }: { standalone?: boolean }) {
                     src={images.founderPortrait}
                     alt={`${firmInfo.founder}, ${firmInfo.founderTitle} at ${firmInfo.name}`}
                     className="h-full w-full object-cover object-top img-premium transition-transform duration-700 hover:scale-[1.03]"
+                    style={{ objectPosition: "center 15%" }}
                   />
                 </div>
                 <div className="portrait-frame__accent" aria-hidden="true" />

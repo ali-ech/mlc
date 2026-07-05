@@ -43,7 +43,16 @@ export function TeamMemberPage({ id }: TeamMemberPageProps) {
             </Link>
             <div className="detail-page__team-hero">
               <div className="detail-page__team-photo">
-                <img src={member.image} alt={member.name} className="img-premium" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="img-premium"
+                  style={
+                    "imagePosition" in member && member.imagePosition
+                      ? { objectPosition: member.imagePosition }
+                      : undefined
+                  }
+                />
               </div>
               <div>
                 <h1 className="display-lg">{member.name}</h1>

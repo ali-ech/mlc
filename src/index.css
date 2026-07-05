@@ -2929,6 +2929,18 @@ textarea.form-input {
   color: var(--color-gold-light);
 }
 
+.site-footer__social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.contact-v3__social {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .site-footer__bar {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
