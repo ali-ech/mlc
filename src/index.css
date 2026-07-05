@@ -2118,6 +2118,55 @@ textarea.form-input {
   color: #fff;
 }
 
+/* ── Mobile menu ── */
+.mobile-menu {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: rgba(253, 251, 247, 0.98);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-menu__list {
+  display: flex;
+  min-height: calc(100dvh - var(--header-height));
+  flex-direction: column;
+  gap: 0;
+  padding-block: 1.5rem 2rem;
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 1.125rem;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobile-menu__link-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 5vw, 1.75rem);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.mobile-menu__link:hover .mobile-menu__link-text,
+.mobile-menu__link:focus-visible .mobile-menu__link-text {
+  color: var(--color-gold);
+}
+
+.mobile-menu__link--active .mobile-menu__link-text {
+  color: var(--color-gold);
+}
+
+.mobile-menu__cta {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
 /* ── Inquiry form (shared) ── */
 .inquiry-form__header {
   margin-bottom: 1.5rem;
@@ -2736,10 +2785,6 @@ textarea.form-input {
 
   .site-header .container-grid {
     grid-template-columns: 1fr auto;
-  }
-
-  .site-header nav {
-    display: none;
   }
 }
 

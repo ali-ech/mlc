@@ -52,7 +52,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 xl:gap-10 lg:flex" aria-label="Main navigation">
+        <nav className="site-header__desktop-nav hidden items-center gap-8 xl:gap-10 lg:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -95,14 +95,14 @@ export function Header() {
         {menuOpen && (
           <motion.nav
             id="mobile-menu"
-            className="fixed inset-0 top-[var(--header-height)] z-40 bg-[var(--color-bg)] lg:hidden"
+            className="mobile-menu fixed inset-0 top-[var(--header-height)] z-40 lg:hidden"
             aria-label="Mobile navigation"
             initial={prefersReducedMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={prefersReducedMotion ? undefined : { opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <ul className="container-grid flex h-full flex-col justify-center gap-0 py-12">
+            <ul className="mobile-menu__list container-grid">
               {navLinks.map((link, i) => (
                 <motion.li
                   key={link.label}
@@ -112,12 +112,12 @@ export function Header() {
                 >
                   <Link
                     to={link.to}
-                    className="group flex items-center justify-between border-b border-[var(--color-border)] py-6"
+                    className={`mobile-menu__link group ${
+                      location.pathname === link.to ? "mobile-menu__link--active" : ""
+                    }`}
                     onClick={closeMenu}
                   >
-                    <span className="font-serif text-2xl font-medium text-[var(--color-ink)]">
-                      {link.label}
-                    </span>
+                    <span className="mobile-menu__link-text">{link.label}</span>
                     <ArrowRight
                       className="h-4 w-4 stroke-[1.25] text-[var(--color-grey-faint)] transition-transform group-hover:translate-x-1 group-hover:text-[var(--color-ink)]"
                       aria-hidden="true"
@@ -126,7 +126,7 @@ export function Header() {
                 </motion.li>
               ))}
               <motion.li
-                className="mt-10"
+                className="mobile-menu__cta"
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.45 }}
