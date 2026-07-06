@@ -1,23 +1,21 @@
 interface BrandLogoProps {
-  variant?: "header-light" | "header-dark" | "footer";
+  /** light = white text (transparent bg), dark = charcoal text (transparent bg) */
+  variant?: "light" | "dark";
 }
 
-export function BrandLogo({ variant = "header-dark" }: BrandLogoProps) {
-  const src =
-    variant === "header-light" || variant === "footer"
-      ? "/brand/logo-light.png"
-      : "/brand/logo-dark.png";
-
+export function BrandLogo({ variant = "dark" }: BrandLogoProps) {
   return (
-    <span className={`brand-logo brand-logo--${variant}`}>
-      <img
-        src={src}
-        alt="Muntaha Law Consultants"
-        className="brand-logo__img"
-        width={220}
-        height={64}
-        decoding="async"
-      />
+    <span
+      className={`brand-logo brand-logo--${variant}`}
+      role="img"
+      aria-label="Muntaha Law Consultants"
+    >
+      <span className="brand-logo__script" aria-hidden="true">
+        Muntaha
+      </span>
+      <span className="brand-logo__caps" aria-hidden="true">
+        LAW CONSULTANTS
+      </span>
     </span>
   );
 }

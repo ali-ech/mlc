@@ -25,7 +25,7 @@ export function Footer() {
           <div className="site-footer__grid">
             <div className="site-footer__brand">
               <Link to="/" className="site-footer__logo group">
-                <BrandLogo variant="footer" />
+                <BrandLogo variant="light" />
               </Link>
               <p className="site-footer__tagline">
                 Focused legal counsel for Pakistan&apos;s pharmaceutical, nutraceutical, herbal, and
