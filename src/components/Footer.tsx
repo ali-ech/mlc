@@ -25,7 +25,7 @@ export function Footer() {
           <div className="site-footer__grid">
             <div className="site-footer__brand">
               <Link to="/" className="site-footer__logo group">
-                <BrandLogo variant="light" />
+                <BrandLogo variant="light" size="footer" />
               </Link>
               <p className="site-footer__tagline">
                 Focused legal counsel for Pakistan&apos;s pharmaceutical, nutraceutical, herbal, and
@@ -90,11 +90,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  <span>
-                    <a href={`mailto:${firmInfo.email}`}>{firmInfo.email}</a>
-                    <br />
-                    <a href={`mailto:${firmInfo.founderEmail}`}>{firmInfo.founderEmail}</a>
-                  </span>
+                  <a href={`mailto:${firmInfo.email}`}>{firmInfo.email}</a>
                 </li>
                 <li>
                   <Globe className="h-4 w-4 shrink-0" aria-hidden="true" />

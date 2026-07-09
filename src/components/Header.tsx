@@ -113,7 +113,7 @@ export function Header() {
         } ${menuOpen ? "site-header--menu-open" : ""}`}
       >
         <div className="site-header__bar container-grid">
-          <Link to="/" className="site-header__brand group" onClick={closeMenu}>
+          <Link to="/" className="site-header__brand group w-fit" onClick={closeMenu}>
             <BrandLogo variant={solid ? "dark" : "light"} />
           </Link>
 

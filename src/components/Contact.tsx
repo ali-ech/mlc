@@ -33,7 +33,7 @@ const contactItems: {
   {
     icon: Mail,
     label: "Email",
-    value: `${firmInfo.email} · ${firmInfo.founderEmail}`,
+    value: firmInfo.email,
     href: `mailto:${firmInfo.email}`,
   },
   {

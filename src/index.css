@@ -1234,13 +1234,17 @@ textarea.form-input {
 
 .site-header__brand {
   display: flex;
-  min-width: 0;
   align-items: center;
+  flex-shrink: 0;
+  min-width: auto;
+  overflow: visible;
   text-decoration: none;
 }
 
 .site-header__brand .brand-logo {
-  min-width: 0;
+  flex-shrink: 0;
+  min-width: auto;
+  overflow: visible;
 }
 
 .site-header__actions {
@@ -1344,63 +1348,33 @@ textarea.form-input {
   color: var(--color-gold-light);
 }
 
-/* ── Brand logo (business card style, transparent bg) ── */
+/* ── Brand logo (extracted from business card, transparent bg) ── */
 .brand-logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0.12rem;
-  min-width: 0;
+  display: block;
+  flex-shrink: 0;
   background: transparent;
-  line-height: 1;
+  line-height: 0;
 }
 
-.brand-logo__script {
+.brand-logo__img {
   display: block;
-  font-family: var(--font-script);
-  font-size: clamp(1.65rem, 4.8vw, 2.15rem);
-  font-weight: 400;
-  line-height: 0.95;
-  white-space: nowrap;
+  width: auto !important;
+  max-width: none !important;
+  height: 3rem !important;
+  object-fit: contain;
+  object-position: left center;
 }
 
-.brand-logo__caps {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: clamp(0.5rem, 1.45vw, 0.625rem);
-  font-weight: 700;
-  letter-spacing: 0.34em;
-  text-indent: 0.17em;
-  line-height: 1;
-  white-space: nowrap;
+.brand-logo--footer .brand-logo__img {
+  height: 3.25rem !important;
 }
 
-.brand-logo--light .brand-logo__script,
-.brand-logo--light .brand-logo__caps {
-  color: #ffffff;
+.brand-logo--light .brand-logo__img {
+  filter: brightness(0) invert(1);
 }
 
-.brand-logo--dark .brand-logo__script,
-.brand-logo--dark .brand-logo__caps {
-  color: #3f3f3f;
-}
-
-.site-footer__logo .brand-logo {
-  gap: 0.15rem;
-}
-
-.site-footer__logo .brand-logo__script {
-  font-size: clamp(1.85rem, 5.5vw, 2.35rem);
-}
-
-.site-footer__logo .brand-logo__caps {
-  font-size: clamp(0.55rem, 1.6vw, 0.6875rem);
-}
-
-.group:hover .brand-logo__script,
-.group:hover .brand-logo__caps {
-  opacity: 0.9;
+.group:hover .brand-logo__img {
+  opacity: 0.92;
   transition: opacity 0.3s ease;
 }
 
@@ -3076,6 +3050,7 @@ textarea.form-input {
   display: inline-flex;
   align-items: center;
   gap: 0.875rem;
+  overflow: visible;
   text-decoration: none;
 }
 
