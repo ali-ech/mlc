@@ -1,7 +1,7 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { InquiryForm } from "./InquiryForm";
 import { firmInfo } from "../data/content";
-import { Clock, Globe, Link as LinkIcon, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Globe, Link as LinkIcon, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const whatsappHref = `https://wa.me/${firmInfo.whatsapp.replace(/\D/g, "")}`;
 
@@ -16,12 +16,6 @@ const contactItems: {
     icon: MapPin,
     label: "Office",
     value: `${firmInfo.address.line1}, ${firmInfo.address.line2}, ${firmInfo.address.city}, ${firmInfo.address.country}`,
-  },
-  {
-    icon: Phone,
-    label: "Telephone",
-    value: firmInfo.phone,
-    href: `tel:${firmInfo.phone.replace(/\s/g, "")}`,
   },
   {
     icon: MessageCircle,

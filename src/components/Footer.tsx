@@ -8,7 +8,6 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Phone,
 } from "lucide-react";
 import { firmInfo, navLinks, practiceAreas } from "../data/content";
 import { BrandLogo } from "./BrandLogo";
@@ -77,10 +76,6 @@ export function Footer() {
                     <br />
                     {firmInfo.address.city}, {firmInfo.address.country}
                   </span>
-                </li>
-                <li>
-                  <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  <a href={`tel:${firmInfo.phone.replace(/\s/g, "")}`}>{firmInfo.phone}</a>
                 </li>
                 <li>
                   <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />

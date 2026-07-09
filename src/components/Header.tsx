@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Menu, MessageCircle, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useScrollHeader } from "../hooks/useScrollHeader";
 import { firmInfo, navLinks } from "../data/content";
 import { BrandLogo } from "./BrandLogo";
+
+const whatsappHref = `https://wa.me/${firmInfo.whatsapp.replace(/\D/g, "")}`;
 
 export function Header() {
   const isScrolled = useScrollHeader();
@@ -88,12 +90,14 @@ export function Header() {
                         <ArrowRight className="btn__arrow h-3.5 w-3.5 stroke-[1.5]" aria-hidden="true" />
                       </Link>
                       <a
-                        href={`tel:${firmInfo.phone.replace(/\s/g, "")}`}
+                        href={whatsappHref}
                         className="mobile-menu__phone"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={closeMenu}
                       >
-                        <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-                        {firmInfo.phone}
+                        <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+                        WhatsApp {firmInfo.whatsapp}
                       </a>
                     </div>
                   </div>

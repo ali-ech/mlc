@@ -5,7 +5,6 @@ export const firmInfo = {
   founderTitle: "Advocate High Court",
   founded: 2003,
   email: "postshaheen@gmail.com",
-  phone: "+92 91 26 18 008",
   whatsapp: "+92 331 33 33 131",
   website: "https://www.muntahalc.com",
   websiteDisplay: "www.muntahalc.com",
